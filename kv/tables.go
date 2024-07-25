@@ -437,6 +437,7 @@ const (
 	TX_PRICE_PERCENTAGE = "hermez_txPricePercentage"                 // txHash -> txPricePercentage
 	STATE_ROOTS = "hermez_stateRoots"                                // l2blockno -> stateRoot
 	L1_INFO_TREE_UPDATES = "l1_info_tree_updates"                    // index -> L1InfoTreeUpdate
+	L1_INFO_TREE_UPDATES_BY_GER = "l1_info_tree_updates_by_ger"      // GER -> L1InfoTreeUpdate
 	BLOCK_L1_INFO_TREE_INDEX = "block_l1_info_tree_index"            // block number -> l1 info tree index
 	L1_INJECTED_BATCHES = "l1_injected_batches"                      // index increasing by 1 -> injected batch for the start of the chain
 	BLOCK_INFO_ROOTS = "block_info_roots"                            // block number -> block info root hash
@@ -446,6 +447,19 @@ const (
 	INTERMEDIATE_TX_STATEROOTS = "hermez_intermediate_tx_stateRoots" // l2blockno -> stateRoot
 	BATCH_WITNESSES = "hermez_batch_witnesses"                       // batch number -> witness
 	BATCH_COUNTERS = "hermez_batch_counters"                         // batch number -> counters
+	L1_BATCH_DATA = "l1_batch_data"                                  // batch number -> l1 batch data from transaction call data
+	L1_INFO_TREE_HIGHEST_BLOCK = "l1_info_tree_highest_block"        // highest l1 block number found with L1 info tree updates
+	REUSED_L1_INFO_TREE_INDEX = "reused_l1_info_tree_index"          // block number => const 1
+	LATEST_USED_GER = "latest_used_ger"                              // batch number -> GER latest used GER
+	BATCH_BLOCKS = "batch_blocks"                                    // batch number -> block numbers (concatenated together)
+	SMT_DEPTHS = "smt_depths"                                        // block number -> smt depth
+	L1_INFO_LEAVES = "l1_info_leaves"                                // l1 info tree index -> l1 info tree leaf
+	L1_INFO_ROOTS = "l1_info_roots"                                  // root hash -> l1 info tree index
+	INVALID_BATCHES = "invalid_batches"                              // batch number -> true
+	BATCH_PARTIALLY_PROCESSED = "batch_partially_processed"          // batch number -> true
+	LOCAL_EXIT_ROOTS = "local_exit_roots"                            // l2 block number -> local exit root
+	ROllUP_TYPES_FORKS = "rollup_types_forks"                        // rollup type id -> fork id
+	FORK_HISTORY = "fork_history"                                    // index -> fork id + last verified
 )
 
 // Keys
@@ -605,6 +619,7 @@ var ChaindataTables = []string{
 	TX_PRICE_PERCENTAGE,
 	STATE_ROOTS,
 	L1_INFO_TREE_UPDATES,
+	L1_INFO_TREE_UPDATES_BY_GER,
 	BLOCK_L1_INFO_TREE_INDEX,
 	L1_INJECTED_BATCHES,
 	BLOCK_INFO_ROOTS,
@@ -614,6 +629,19 @@ var ChaindataTables = []string{
 	INTERMEDIATE_TX_STATEROOTS,
 	BATCH_WITNESSES,
 	BATCH_COUNTERS,
+	L1_BATCH_DATA,
+	L1_INFO_TREE_HIGHEST_BLOCK,
+	REUSED_L1_INFO_TREE_INDEX,
+	LATEST_USED_GER,
+	BATCH_BLOCKS,
+	SMT_DEPTHS,
+	L1_INFO_LEAVES,
+	L1_INFO_ROOTS,
+	INVALID_BATCHES,
+	BATCH_PARTIALLY_PROCESSED,
+	LOCAL_EXIT_ROOTS,
+	ROllUP_TYPES_FORKS,
+	FORK_HISTORY,
 }
 
 const (
