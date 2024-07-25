@@ -179,7 +179,7 @@ const (
 	//key - contract code hash
 	//value - contract TEVM code
 	ContractTEVMCode = "TEVMCode"
-)
+) 
 
 /*
 TrieOfAccounts and TrieOfStorage
