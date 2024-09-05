@@ -469,6 +469,7 @@ const (
 	TableMetadata                     = "HermezSmtMetadata"
 	TableHashKey                      = "HermezSmtHashKey"
 	TablePoolLimbo                    = "PoolLimbo"
+	BATCH_ENDS                        = "batch_ends"
 )
 
 // Keys
@@ -660,6 +661,7 @@ var ChaindataTables = []string{
 	TableMetadata,
 	TableHashKey,
 	TablePoolLimbo,
+	BATCH_ENDS,
 }
 
 const (
