@@ -470,8 +470,6 @@ const (
 	TableHashKey                      = "HermezSmtHashKey"
 	TablePoolLimbo                    = "PoolLimbo"
 	BATCH_ENDS                        = "batch_ends"
-	FORK_FIRST_BATCH                  = "fork_first_batch" // fork id -> first batch number
-	FORK_LAST_BATCH                   = "fork_last_batch"  // fork id -> last batch number
 )
 
 // Keys
@@ -664,8 +662,6 @@ var ChaindataTables = []string{
 	TableHashKey,
 	TablePoolLimbo,
 	BATCH_ENDS,
-	FORK_FIRST_BATCH,
-	FORK_LAST_BATCH,
 }
 
 const (
