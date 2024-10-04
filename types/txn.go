@@ -699,6 +699,7 @@ func (s *TxSlots) Append(slot *TxSlot, sender []byte, isLocal bool) {
 }
 
 type TxsRlp struct {
+	TxIds   []common.Hash
 	Txs     [][]byte
 	Senders Addresses
 	IsLocal []bool
@@ -715,10 +716,14 @@ func (s *TxsRlp) Resize(targetSize uint) {
 	for uint(len(s.IsLocal)) < targetSize {
 		s.IsLocal = append(s.IsLocal, false)
 	}
+	for uint(len(s.TxIds)) < targetSize {
+		s.TxIds = append(s.TxIds, common.Hash{})
+	}
 	//todo: set nil to overflow txs
 	s.Txs = s.Txs[:targetSize]
 	s.Senders = s.Senders[:length.Addr*targetSize]
 	s.IsLocal = s.IsLocal[:targetSize]
+	s.TxIds = s.TxIds[:targetSize]
 }
 
 var addressesGrowth = make([]byte, length.Addr)
