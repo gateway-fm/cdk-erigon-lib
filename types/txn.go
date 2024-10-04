@@ -379,11 +379,6 @@ func (ctx *TxParseContext) ParseTransaction(payload []byte, pos int, slot *TxSlo
 	}
 	//ctx.keccak1.Sum(slot.IdHash[:0])
 	_, _ = ctx.Keccak1.(io.Reader).Read(slot.IDHash[:32])
-	if validateHash != nil {
-		if err := validateHash(slot.IDHash[:32]); err != nil {
-			return p, err
-		}
-	}
 
 	if !ctx.withSender {
 		return p, nil
@@ -464,6 +459,13 @@ func (ctx *TxParseContext) ParseTransaction(payload []byte, pos int, slot *TxSlo
 	copy(sender, ctx.buf[12:32])
 
 	slot.Size = uint32(p - pos)
+
+	if validateHash != nil {
+		if err := validateHash(slot.IDHash[:32]); err != nil {
+			return p, err
+		}
+	}
+
 	return p, nil
 }
 
