@@ -20,8 +20,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/gateway-fm/cdk-erigon-lib/gointerfaces/types"
 	"fmt"
+
+	"github.com/gateway-fm/cdk-erigon-lib/gointerfaces/types"
 )
 
 // DBSchemaVersion versions list
@@ -470,6 +471,7 @@ const (
 	TableHashKey                      = "HermezSmtHashKey"
 	TablePoolLimbo                    = "PoolLimbo"
 	BATCH_ENDS                        = "batch_ends"
+	WITNESS_CACHE                     = "witness_cache" // block number -> witness for 1 block
 )
 
 // Keys
@@ -662,6 +664,7 @@ var ChaindataTables = []string{
 	TableHashKey,
 	TablePoolLimbo,
 	BATCH_ENDS,
+	WITNESS_CACHE,
 }
 
 const (
